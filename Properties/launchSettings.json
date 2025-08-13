@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MyBoard (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MyBoard (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
