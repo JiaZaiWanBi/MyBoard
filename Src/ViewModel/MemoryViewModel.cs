@@ -8,8 +8,7 @@ namespace MyBoard.Src.ViewModel
     public partial class MemoryViewModel : WebSocketBase
     {
         [ObservableProperty]
-        private string memoryText = "等待数据...";
-
+        private string? memoryText= "等待数据...";
 
         public MemoryViewModel() : base("ws://127.0.0.1:9090/memory") { }
 

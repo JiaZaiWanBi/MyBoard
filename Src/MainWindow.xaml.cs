@@ -42,11 +42,11 @@ public sealed partial class MainWindow : Window
         AppWindow.Resize(new Windows.Graphics.SizeInt32(800, 500));
         AppWindow.Title = "MyBoard";
 
-        var servers = new List<ServerInfoModel>
+        var servers = new List<ServerInfoViewModel>
             {
-                new ServerInfoModel { Name = "Server 1", ConnectionType = "Wi-Fi", Latency = "20ms" },
-                new ServerInfoModel { Name = "Server 2", ConnectionType = "Ethernet", Latency = "50ms" },
-                new ServerInfoModel { Name = "Server 3", ConnectionType = "Wi-Fi", Latency = "120ms" }
+                new ServerInfoViewModel { Name = "Server 1", ConnectionType = "Wi-Fi", Latency = "20ms" },
+                new ServerInfoViewModel { Name = "Server 2", ConnectionType = "Ethernet", Latency = "50ms" },
+                new ServerInfoViewModel { Name = "Server 3", ConnectionType = "Wi-Fi", Latency = "120ms" }
             };
 
         foreach (var server in servers)

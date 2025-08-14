@@ -12,6 +12,11 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
 	<LangVersion>preview</LangVersion>
+	<AppxPackage>false</AppxPackage>
+	<ApplicationType>Windows Store</ApplicationType>
+	<WindowsPackageType>None</WindowsPackageType>
+	<WinUISDKReferences>false</WinUISDKReferences>
+	<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Src\Component\MemoryText.xaml" />
