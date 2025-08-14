@@ -6,7 +6,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MyBoard.ViewModel
+namespace MyBoard.Src.ViewModel
 {
     // 通用 WebSocket 基类
     public abstract class WebSocketBase : ObservableObject
@@ -44,16 +44,8 @@ namespace MyBoard.ViewModel
             }
         }
 
-        /// <summary>
-        /// 子类实现：处理接收到的消息
-        /// </summary>
-        /// <param name="json"></param>
         protected abstract void HandleMessage(string json);
 
-        /// <summary>
-        /// 子类可重写：处理异常
-        /// </summary>
-        /// <param name="ex"></param>
         protected virtual void HandleError(Exception ex)
         {
             Console.WriteLine($"WebSocket Error: {ex.Message}");

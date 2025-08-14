@@ -6,6 +6,7 @@
     xmlns:local="using:MyBoard"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:component="using:MyBoard.Src.Component"
     mc:Ignorable="d"
     Title="MyBoard">
 
@@ -14,13 +15,6 @@
     </Window.SystemBackdrop>
 
     <Grid>
-        <TextBlock Text="{x:Bind TrafficViewModel.TrafficText ,Mode=OneWay}" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Center"
-                   FontSize="24"/>
-        <TextBlock Text="{x:Bind MemoryViewModel.MemoryText ,Mode=OneWay}" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Center"
-                   FontSize="24"/>
+        <StackPanel x:Name="ServerPanel" Orientation="Vertical" Spacing="10"/>
     </Grid>
 </Window>

@@ -13,6 +13,10 @@
     <Nullable>enable</Nullable>
 	<LangVersion>preview</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Src\Component\MemoryText.xaml" />
+    <None Remove="Src\Component\ServerCard.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -42,7 +46,12 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Src\View\" />
+    <Page Update="Src\Component\MemoryText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Src\Component\ServerCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!--
