@@ -1,13 +1,13 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using Windows.ApplicationModel;
-using MyBoard.Src.ViewModel;
+using MyBoard.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBoard.Src.Component;
+namespace MyBoard.Controls;
 
 public sealed partial class MemoryText : UserControl
 {

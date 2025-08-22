@@ -19,8 +19,10 @@
 	<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Src\Component\MemoryText.xaml" />
-    <None Remove="Src\Component\ServerCard.xaml" />
+    <None Remove="Controls\MemoryText.xaml" />
+    <None Remove="Controls\ServerCard.xaml" />
+    <None Remove="Pages\SelectPage.xaml" />
+    <None Remove="Pages\SettingPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,10 +53,20 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Src\Component\MemoryText.xaml">
+    <Page Update="Pages\SettingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Update="Src\Component\ServerCard.xaml">
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\MemoryText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Controls\ServerCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\SelectPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

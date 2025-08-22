@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="MyBoard.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyBoard"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:MyBoard.Controls"
+    mc:Ignorable="d"
+    Title="MyBoard">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="AppTitleBar">
+            <TextBlock Text="MyBoard"
+                       TextWrapping="NoWrap"
+                       Style="{StaticResource CaptionTextBlockStyle}" 
+                       VerticalAlignment="Center"
+                       Margin="28,0,0,0"/>
+        </Grid>
+
+        <NavigationView 
+            Grid.Row="1"
+            x:Name="nvSample"
+            IsSettingsVisible="True"
+            IsBackButtonVisible="Collapsed"
+            IsBackEnabled="False"
+            SelectionChanged="NavigationView_SelectionChanged"
+            PaneDisplayMode="Left"
+            ExpandedModeThresholdWidth="500"
+            SelectionFollowsFocus="Disabled"
+            IsTabStop="False">
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Uid="NavigationBar_Home" Tag="SelectPage" x:Name="HomePageItem" Icon="Home" IsSelected="True" Content="首页" />
+            </NavigationView.MenuItems>
+            <!-- How to set Mica/Acrylic to content in Frame? -->
+            <Frame x:Name="contentFrame" />
+        </NavigationView>
+    </Grid>
+</Window>

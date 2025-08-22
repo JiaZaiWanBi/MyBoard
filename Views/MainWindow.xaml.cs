@@ -6,10 +6,10 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Navigation;
-using MyBoard.Src.Component;
-using MyBoard.Src.Model;
-using MyBoard.Src.ViewModel;
+using MyBoard.Model;
+using MyBoard.Pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,9 +28,6 @@ namespace MyBoard;
 /// </summary>
 public sealed partial class MainWindow : Window
 {
-    //public TrafficViewModel TrafficViewModel { get; set; } = new();
-    //public MemoryViewModel MemoryViewModel { get; set; } = new();
-
     public MainWindow()
     {
         InitializeComponent();
@@ -39,24 +36,29 @@ public sealed partial class MainWindow : Window
         presenter.IsResizable = false;
         AppWindow.SetPresenter(presenter);
 
-        AppWindow.Resize(new Windows.Graphics.SizeInt32(800, 500));
+        AppWindow.Resize(new Windows.Graphics.SizeInt32(1200, 800));
         AppWindow.Title = "MyBoard";
 
-        var servers = new List<ServerInfoViewModel>
-            {
-                new ServerInfoViewModel { Name = "Server 1", ConnectionType = "Wi-Fi", Latency = "20ms" },
-                new ServerInfoViewModel { Name = "Server 2", ConnectionType = "Ethernet", Latency = "50ms" },
-                new ServerInfoViewModel { Name = "Server 3", ConnectionType = "Wi-Fi", Latency = "120ms" }
-            };
-
-        foreach (var server in servers)
+    }
+    private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+    {
+        if (args.IsSettingsSelected)
         {
-            var card = new ServerCard
-            {
-                ServerInfo = server
-            };
-            ServerPanel.Children.Add(card);
+            contentFrame.Navigate(typeof(SettingPage));
+        }
+        else
+        {
+            var selectedItem = (NavigationViewItem)args.SelectedItem;
+            string selectedItemTag = ((string)selectedItem.Tag);
+            string pageName = "MyBoard.Pages." + selectedItemTag;
+            Type pageType = Type.GetType(pageName);
+            contentFrame.Navigate(pageType);
         }
     }
 
+    public void Navigate(Type pageType, object targetPageArguments = null, NavigationTransitionInfo navigationTransitionInfo = null)
+    {
+        RootFrame.Navigate(pageType, targetPageArguments, navigationTransitionInfo);
+    }
+    public Frame RootFrame => contentFrame;
 }

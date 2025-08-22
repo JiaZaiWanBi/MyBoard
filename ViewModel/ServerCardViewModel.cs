@@ -3,7 +3,7 @@ using Microsoft.UI;
 using Microsoft.UI.Xaml.Media;
 using System;
 
-namespace MyBoard.Src.ViewModel;
+namespace MyBoard.ViewModel;
 
 public partial class ServerInfoViewModel : ObservableObject
 {

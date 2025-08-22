@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MyBoard.Src.Model;
+using MyBoard.Model;
 using System;
 using System.Text.Json;
 
-namespace MyBoard.Src.ViewModel
+namespace MyBoard.ViewModel
 {
     public partial class TrafficViewModel : WebSocketBase
     {
